@@ -10,24 +10,6 @@ input_sources:
     publish_on_update: true
     sensor_processor:
       type: perfect
-  livox_right:
-    type: pointcloud
-    topic: /livox/right
-    queue_size: 1
-    publish_on_update: true
-    sensor_processor:
-      type: laser
-      ignore_points_above: 0.5
-      ignore_points_below: -0.5
-  livox_left:
-    type: pointcloud
-    topic: /livox/left
-    queue_size: 1
-    publish_on_update: true
-    sensor_processor:
-      type: laser
-      ignore_points_above: 0.5
-      ignore_points_below: -0.5
 
 track_point_frame_id: base
 track_point_x: 0.0
