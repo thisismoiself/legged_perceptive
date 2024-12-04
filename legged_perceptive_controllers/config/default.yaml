@@ -1,3 +1,7 @@
 controllers:
   perceptive_controller:
     type: legged/PerceptiveController
+  stand_up_controller:
+    type: legged/StandUpController
+  lie_down_controller:
+    type: legged/LieDownController

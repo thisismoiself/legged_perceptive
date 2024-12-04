@@ -7,4 +7,17 @@
         </description>
     </class>
 
+    <class name="legged/StandUpController"
+           type="legged::StandUpController"
+           base_class_type="controller_interface::ControllerBase">
+        <description>
+        </description>
+    </class>
+
+    <class name="legged/LieDownController"
+           type="legged::LieDownController"
+           base_class_type="controller_interface::ControllerBase">
+        <description>
+        </description>
+    </class>
 </library>
