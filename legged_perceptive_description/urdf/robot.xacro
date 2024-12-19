@@ -6,7 +6,7 @@
     <xacro:include filename="$(find legged_unitree_description)/urdf/robot.xacro" />
 
     <xacro:include filename="$(find legged_perceptive_description)/urdf/sensor_d435.xacro" />
-    <xacro:include filename="$(find legged_perceptive_description)/urdf/sensor_t265.xacro" />
+    <!-- <xacro:include filename="$(find legged_perceptive_description)/urdf/sensor_t265.xacro" /> -->
     <!-- <xacro:include filename="$(find legged_perceptive_description)/urdf/mid360.xacro"/> -->
 
 
