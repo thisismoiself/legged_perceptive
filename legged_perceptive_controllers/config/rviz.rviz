@@ -6,6 +6,8 @@ Panels:
       Expanded:
         - /CurrentState1/Namespaces1
         - /FootPlacement1/Namespaces1
+        - /TF1
+        - /TF1/Frames1
       Splitter Ratio: 0.7029411792755127
     Tree Height: 478
   - Class: rviz/Selection
@@ -301,6 +303,129 @@ Visualization Manager:
       Transport Hint: raw
       Unreliable: false
       Value: true
+    - Class: rviz/TF
+      Enabled: true
+      Filter (blacklist): ""
+      Filter (whitelist): ""
+      Frame Timeout: 15
+      Frames:
+        All Enabled: false
+        LF_FOOT:
+          Value: false
+        LF_calf:
+          Value: false
+        LF_hip:
+          Value: false
+        LF_thigh:
+          Value: false
+        LH_FOOT:
+          Value: false
+        LH_calf:
+          Value: false
+        LH_hip:
+          Value: false
+        LH_thigh:
+          Value: false
+        RF_FOOT:
+          Value: false
+        RF_calf:
+          Value: false
+        RF_hip:
+          Value: false
+        RF_thigh:
+          Value: false
+        RH_FOOT:
+          Value: false
+        RH_calf:
+          Value: false
+        RH_hip:
+          Value: false
+        RH_thigh:
+          Value: false
+        base:
+          Value: false
+        base_imu:
+          Value: false
+        camera_link:
+          Value: false
+        depth_camera_bottom_screw_frame:
+          Value: false
+        depth_camera_color_frame:
+          Value: false
+        depth_camera_color_optical_frame:
+          Value: false
+        depth_camera_depth_frame:
+          Value: false
+        depth_camera_depth_optical_frame:
+          Value: false
+        depth_camera_left_ir_frame:
+          Value: false
+        depth_camera_left_ir_optical_frame:
+          Value: false
+        depth_camera_link:
+          Value: false
+        depth_camera_right_ir_frame:
+          Value: false
+        depth_camera_right_ir_optical_frame:
+          Value: false
+        map:
+          Value: false
+        odom:
+          Value: false
+        region_0:
+          Value: false
+      Marker Alpha: 1
+      Marker Scale: 1
+      Name: TF
+      Show Arrows: true
+      Show Axes: true
+      Show Names: true
+      Tree:
+        map:
+          odom:
+            base:
+              LF_hip:
+                LF_thigh:
+                  LF_calf:
+                    LF_FOOT:
+                      {}
+              LH_hip:
+                LH_thigh:
+                  LH_calf:
+                    LH_FOOT:
+                      {}
+              RF_hip:
+                RF_thigh:
+                  RF_calf:
+                    RF_FOOT:
+                      {}
+              RH_hip:
+                RH_thigh:
+                  RH_calf:
+                    RH_FOOT:
+                      {}
+              base_imu:
+                {}
+              camera_link:
+                {}
+              depth_camera_bottom_screw_frame:
+                depth_camera_link:
+                  depth_camera_depth_frame:
+                    depth_camera_color_frame:
+                      depth_camera_color_optical_frame:
+                        {}
+                    depth_camera_depth_optical_frame:
+                      {}
+                    depth_camera_left_ir_frame:
+                      depth_camera_left_ir_optical_frame:
+                        {}
+                    depth_camera_right_ir_frame:
+                      depth_camera_right_ir_optical_frame:
+                        {}
+            region_0:
+              {}
+      Update Interval: 0
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 255; 255; 255
@@ -388,4 +513,4 @@ Window Geometry:
     collapsed: true
   Width: 1484
   X: 134
-  Y: 92
+  Y: 27
