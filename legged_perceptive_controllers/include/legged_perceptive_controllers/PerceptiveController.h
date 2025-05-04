@@ -5,6 +5,7 @@
 #include "legged_perceptive_controllers/visualization/FootPlacementVisualization.h"
 #include "legged_perceptive_controllers/visualization/SphereVisualization.h"
 
+#include <legged_controllers/LeggedControllerFromTopicEstimate.h>
 #include <legged_controllers/LeggedController.h>
 
 namespace legged {

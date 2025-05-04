@@ -5,3 +5,6 @@ controllers:
     type: legged/StandUpController
   lie_down_controller:
     type: legged/LieDownController
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 100

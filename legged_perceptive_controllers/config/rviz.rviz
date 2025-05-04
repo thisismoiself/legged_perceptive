@@ -182,16 +182,11 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        base_imu:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         camera_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        chin_lidar_link:
+        chin_lidar:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -205,6 +200,11 @@ Visualization Manager:
           Show Trail: false
           Value: true
         hesai_base:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        imu_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -224,10 +224,7 @@ Visualization Manager:
       Marker Topic: /legged_robot/currentState
       Name: CurrentState
       Namespaces:
-        Center of Pressure: false
-        EE Forces: true
-        EE Positions: false
-        Support Polygon: false
+        {}
       Queue Size: 100
       Value: true
     - Class: rviz/MarkerArray
@@ -235,8 +232,7 @@ Visualization Manager:
       Marker Topic: /legged_robot/optimizedStateTrajectory
       Name: OptimizedStateTrajectory
       Namespaces:
-        CoM Trajectory: true
-        EE Trajectories: true
+        {}
       Queue Size: 100
       Value: true
     - Class: rviz/MarkerArray
@@ -324,19 +320,17 @@ Visualization Manager:
           Value: false
         base:
           Value: true
-        base_imu:
-          Value: false
         camera_link:
           Value: false
-        chin_lidar_link:
-          Value: false
+        chin_lidar:
+          Value: true
         depth_camera_bottom_screw_frame:
           Value: false
         depth_camera_link:
           Value: false
         hesai_base:
           Value: true
-        odom:
+        imu_link:
           Value: true
         pandar:
           Value: false
@@ -347,47 +341,46 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        odom:
-          base:
-            LF_hip:
-              LF_thigh:
-                LF_calf:
-                  LF_FOOT:
-                    {}
-            LH_hip:
-              LH_thigh:
-                LH_calf:
-                  LH_FOOT:
-                    {}
-            RF_hip:
-              RF_thigh:
-                RF_calf:
-                  RF_FOOT:
-                    {}
-            RH_hip:
-              RH_thigh:
-                RH_calf:
-                  RH_FOOT:
-                    {}
-            base_imu:
+        base:
+          LF_hip:
+            LF_thigh:
+              LF_calf:
+                LF_FOOT:
+                  {}
+          LH_hip:
+            LH_thigh:
+              LH_calf:
+                LH_FOOT:
+                  {}
+          RF_hip:
+            RF_thigh:
+              RF_calf:
+                RF_FOOT:
+                  {}
+          RH_hip:
+            RH_thigh:
+              RH_calf:
+                RH_FOOT:
+                  {}
+          camera_link:
+            {}
+          chin_lidar:
+            {}
+          depth_camera_bottom_screw_frame:
+            depth_camera_link:
               {}
-            camera_link:
+          hesai_base:
+            pandar:
               {}
-            chin_lidar_link:
-              {}
-            depth_camera_bottom_screw_frame:
-              depth_camera_link:
-                {}
-            hesai_base:
-              pandar:
-                {}
+          imu_link:
+            {}
       Update Interval: 0
       Value: true
   Enabled: true
   Global Options:
     Background Color: 85; 87; 83
     Default Light: true
-    Fixed Frame: odom
+    Fixed Frame: base
     Frame Rate: 30
   Name: root
   Tools:
@@ -411,7 +404,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 2.5654661655426025
+      Distance: 2.0907397270202637
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -419,17 +412,17 @@ Visualization Manager:
         Value: false
       Field of View: 0.7853981852531433
       Focal Point:
-        X: 0.45594844222068787
-        Y: 0.8098962306976318
-        Z: -0.5416109561920166
+        X: 0.266139954328537
+        Y: -0.051240626722574234
+        Z: 0.026896541938185692
       Focal Shape Fixed Size: false
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.43979892134666443
+      Pitch: 0.3697991371154785
       Target Frame: base
-      Yaw: 4.3954596519470215
+      Yaw: 5.205472946166992
     Saved:
       - Class: rviz/Orbit
         Distance: 1.6215763092041016
