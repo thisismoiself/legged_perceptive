@@ -12,7 +12,7 @@ namespace legged {
 using namespace ocs2;
 using namespace legged_robot;
 
-class PerceptiveController : public legged::LeggedController {
+class PerceptiveController : public legged::LeggedControllerFromTopicEstimate {
  protected:
   void setupLeggedInterface(const std::string& taskFile, const std::string& urdfFile, const std::string& referenceFile,
                             bool verbose) override;

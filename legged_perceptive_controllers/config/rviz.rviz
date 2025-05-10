@@ -5,12 +5,11 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /Global Options1
+        - /FilteredMap1
         - /CurrentState1/Namespaces1
         - /FootPlacement1/Namespaces1
-        - /TF1
-        - /TF1/Frames1
       Splitter Ratio: 0.7025948166847229
-    Tree Height: 1478
+    Tree Height: 561
   - Class: rviz/Selection
     Name: Selection
   - Class: rviz/Tool Properties
@@ -28,7 +27,7 @@ Panels:
   - Class: rviz/Time
     Name: Time
     SyncMode: 0
-    SyncSource: ""
+    SyncSource: Image
 Preferences:
   PromptSaveOnExit: true
 Toolbars:
@@ -85,7 +84,7 @@ Visualization Manager:
       Show Grid Lines: true
       Topic: /convex_plane_decomposition_ros/filtered_map
       Unreliable: false
-      Use ColorMap: false
+      Use ColorMap: true
       Value: true
     - Alpha: 0.8999999761581421
       Class: rviz/RobotModel
@@ -194,11 +193,43 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+        depth_camera_color_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        depth_camera_color_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        depth_camera_depth_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        depth_camera_depth_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        depth_camera_left_ir_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        depth_camera_left_ir_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
         depth_camera_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
+        depth_camera_right_ir_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        depth_camera_right_ir_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
         hesai_base:
           Alpha: 1
           Show Axes: false
@@ -224,7 +255,10 @@ Visualization Manager:
       Marker Topic: /legged_robot/currentState
       Name: CurrentState
       Namespaces:
-        {}
+        Center of Pressure: true
+        EE Forces: true
+        EE Positions: true
+        Support Polygon: true
       Queue Size: 100
       Value: true
     - Class: rviz/MarkerArray
@@ -232,7 +266,9 @@ Visualization Manager:
       Marker Topic: /legged_robot/optimizedStateTrajectory
       Name: OptimizedStateTrajectory
       Namespaces:
-        {}
+        CoM Trajectory: true
+        EE Trajectories: true
+        Future footholds: true
       Queue Size: 100
       Value: true
     - Class: rviz/MarkerArray
@@ -240,7 +276,9 @@ Visualization Manager:
       Marker Topic: /foot_placement
       Name: FootPlacement
       Namespaces:
-        {}
+        Convex Regions: true
+        Nominal Footholds: true
+        Projections: true
       Queue Size: 100
       Value: true
     - Class: rviz/MarkerArray
@@ -256,7 +294,7 @@ Visualization Manager:
       Marker Topic: /convex_plane_decomposition_ros/boundaries
       Name: MarkerArray
       Namespaces:
-        {}
+        "": true
       Queue Size: 100
       Value: true
     - Class: rviz/MarkerArray
@@ -280,60 +318,12 @@ Visualization Manager:
       Unreliable: false
       Value: true
     - Class: rviz/TF
-      Enabled: true
+      Enabled: false
       Filter (blacklist): ""
       Filter (whitelist): ""
       Frame Timeout: 15
       Frames:
         All Enabled: false
-        LF_FOOT:
-          Value: false
-        LF_calf:
-          Value: false
-        LF_hip:
-          Value: false
-        LF_thigh:
-          Value: false
-        LH_FOOT:
-          Value: false
-        LH_calf:
-          Value: false
-        LH_hip:
-          Value: false
-        LH_thigh:
-          Value: false
-        RF_FOOT:
-          Value: false
-        RF_calf:
-          Value: false
-        RF_hip:
-          Value: false
-        RF_thigh:
-          Value: false
-        RH_FOOT:
-          Value: false
-        RH_calf:
-          Value: false
-        RH_hip:
-          Value: false
-        RH_thigh:
-          Value: false
-        base:
-          Value: true
-        camera_link:
-          Value: false
-        chin_lidar:
-          Value: true
-        depth_camera_bottom_screw_frame:
-          Value: false
-        depth_camera_link:
-          Value: false
-        hesai_base:
-          Value: true
-        imu_link:
-          Value: true
-        pandar:
-          Value: false
       Marker Alpha: 1
       Marker Scale: 1
       Name: TF
@@ -341,46 +331,14 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        base:
-          LF_hip:
-            LF_thigh:
-              LF_calf:
-                LF_FOOT:
-                  {}
-          LH_hip:
-            LH_thigh:
-              LH_calf:
-                LH_FOOT:
-                  {}
-          RF_hip:
-            RF_thigh:
-              RF_calf:
-                RF_FOOT:
-                  {}
-          RH_hip:
-            RH_thigh:
-              RH_calf:
-                RH_FOOT:
-                  {}
-          camera_link:
-            {}
-          chin_lidar:
-            {}
-          depth_camera_bottom_screw_frame:
-            depth_camera_link:
-              {}
-          hesai_base:
-            pandar:
-              {}
-          imu_link:
-            {}
+        {}
       Update Interval: 0
-      Value: true
+      Value: false
   Enabled: true
   Global Options:
     Background Color: 85; 87; 83
     Default Light: true
-    Fixed Frame: base
+    Fixed Frame: odom
     Frame Rate: 30
   Name: root
   Tools:
@@ -404,7 +362,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 2.0907397270202637
+      Distance: 3.604487895965576
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -412,17 +370,17 @@ Visualization Manager:
         Value: false
       Field of View: 0.7853981852531433
       Focal Point:
-        X: 0.266139954328537
-        Y: -0.051240626722574234
-        Z: 0.026896541938185692
+        X: 0.12310462445020676
+        Y: -0.16653499007225037
+        Z: -0.1841050386428833
       Focal Shape Fixed Size: false
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.3697991371154785
+      Pitch: 0.4147990643978119
       Target Frame: base
-      Yaw: 5.205472946166992
+      Yaw: 4.750463962554932
     Saved:
       - Class: rviz/Orbit
         Distance: 1.6215763092041016
@@ -447,12 +405,12 @@ Visualization Manager:
 Window Geometry:
   Displays:
     collapsed: false
-  Height: 2432
+  Height: 1043
   Hide Left Dock: false
   Hide Right Dock: true
   Image:
     collapsed: false
-  QMainWindow State: 000000ff00000000fd0000000400000000000001f700000878fc0200000009fb0000001200530065006c0065006300740069006f006e00000001e10000009b000000b000fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed0000033300000185000000b0fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000006e000006340000018200fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb0000000a0049006d00610067006501000006ae000002380000002600ffffff000000010000010f0000033efc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073000000003d0000033e0000013200fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e1000001970000000300000f7000000060fc0100000002fb0000000800540069006d0065010000000000000f70000006dc00fffffffb0000000800540069006d0065010000000000000450000000000000000000000d6d0000087800000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd00000004000000000000024700000353fc0200000009fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed0000033300000185000000b0fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000003d0000026e000000c900fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb0000000a0049006d00610067006501000002b1000000df0000001600ffffff000000010000010f0000033efc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073000000003d0000033e000000a400fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e100000197000000030000073800000060fc0100000002fb0000000800540069006d0065010000000000000738000003bc00fffffffb0000000800540069006d00650100000000000004500000000000000000000004eb0000035300000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Selection:
     collapsed: false
   Time:
@@ -461,6 +419,6 @@ Window Geometry:
     collapsed: false
   Views:
     collapsed: true
-  Width: 3952
-  X: 144
-  Y: 54
+  Width: 1848
+  X: 2632
+  Y: 0

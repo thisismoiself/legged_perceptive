@@ -15,7 +15,7 @@
         <!-- <origin xyz="0.36 -0.0 0.01" rpy="3.141 0.38 0" /> -->
     </xacro:sensor_d435>
 
-    <gazebo>
+    <!-- <gazebo>
         <plugin name="base_ground_truth_pose" filename="libgazebo_ros_p3d.so">
             <alwaysOn>true</alwaysOn>
             <updateRate>50.0</updateRate>
@@ -26,7 +26,7 @@
             <xyzOffsets>0 0 0</xyzOffsets>
             <rpyOffsets>0 0 0</rpyOffsets>
         </plugin>
-    </gazebo>
+    </gazebo> -->
 
     <!-- <xacro:sensor_t265 name="tracking_camera" topics_ns="tracking_camera" parent="base">
         <origin xyz="0.16 0 0.085" rpy="0 -1.04 0"/>
